@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.movie-rating::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./images/star.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.movie-premire::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./images/calendar.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.movie-duration::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./images/repeat.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.movie-modal-rating::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./images/star.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.movie-modal-premire::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./images/calendar\ \(1\).png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.movie-modal-duration::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./images/hour-glass.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.non-active {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.js-modal-container.active {
+    display: block;
+}
+
+.marked-background {
+    padding: 4px;
+    color: white;
+    background-color: yellow;
+}
+
+
+
+
+
+
+

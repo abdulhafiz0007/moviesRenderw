@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body class="bg-gradient-to-r from-black to-gray-900">
+    
+    <section class="filter-section">
+        <h1 class="text-3xl text-white text-center font-medium mt-[50px] mb-7">Movies</h1>
+        <form class="search-input-form max-w-[1200px] w-full m-auto flex justify-center gap-2">
+            <input class="search-input w-[300px] p-2 pl-4 rounded-lg outline-none focus:shadow-inner placeholder:text-stone-700" type="search" placeholder="Search movie" aria-label="search movie">
+            <select class="js-sorted-select outline-none p-2 rounded-lg">
+                <option value="filter" class="bg-stone-900 text-white">Sorted by</option>
+                <option value="A-Z" class="bg-sky-200">A-Z</option>
+                <option value="Z-A" class="bg-sky-200">Z-A</option>
+                <option value="Old year - New year" class="bg-sky-200">Old year - New year</option>
+                <option value="New year - Old year" class="bg-sky-200">New year - Old year</option>
+                <option value="0 - 10" class="bg-sky-200">0 - 10</option>
+                <option value="10 - 0" class="bg-sky-200">10 - 0</option>
+                <option value="time-1h-3h" class="bg-sky-200">Time 1h to 5h</option>
+                <option value="time-3h-1h" class="bg-sky-200">Time 5h to 1h</option>
+            </select>
+            <select id="catagories-option" class=" outline-none p-2 rounded-lg">
+                <option value="All">All</option>
+            </select>
+            <input class="js-minYear-input p-[6px] pl-3 rounded-lg placeholder:text-stone-700 outline-none"  type="number" placeholder="Min year" aria-label="enter minimum year">
+            <input class="js-maxYear-input p-[6px] pl-3 rounded-lg placeholder:text-stone-700 outline-none"  type="number" placeholder="Max year" aria-label="enter maximum year">
+            <button class="search-button p-2 bg-sky-700 text-white border-none rounded-lg" type="submit">Search</button>
+        </form>
+    </section>
+    
+    
+    
+    <section class="movies-section">
+        <div class="max-w-[1200px] w-full m-auto">
+            <ul class="js-movies-list flex flex-wrap gap-5 gap-y-[40px] mt-10">
+                
+            </ul>
+        </div>
+    </section>
+    
+    <div class="js-modal-container non-active">
+        <div class="js-modal-div relative z-10 m-auto">
+            <div class="fixed m-auto inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
+                <div class="flex justify-center min-h-full p-4 text-left gap-9 sm:items-center sm:p-0">
+                    <div class="flex justify-center bg-slate-900 w-[1200px] rounded p-5 gap-9">
+                        <div class="">
+                            <h3 class="movie-modal-title text-white text-3xl mb-5">Spider-Man</h3>
+                            <iframe class="youtube-video" width="500" height="300" src="" frameborder="0"></iframe>
+                        </div>
+                        <div class="flex flex-col justify-between">
+                            <div class="modal-rightside-wrapper">
+                                <div class="flex items-center  gap-5 mb-7">
+                                    <div>
+                                        <span class="movie-modal-rating inline-flex items-center gap-1 text-white ">7.4</span>
+                                        <span class="movie-modal-premire inline-flex items-center gap-1 text-white mx-5">2017</span>
+                                        <time class="movie-modal-duration inline-flex items-center gap-1 text-white datetime="2024-02-12">66</time>
+                                    </div>
+                                    <img class="js-cancel-button w-[30px] h-[30px] object-cover ml-[60px] cursor-pointer" src="./images/x-button.png"></img>
+                                </div>
+                                <div class="model-content-div flex flex-col">
+                                    <p class="movie-modal-genre text-[17px] text-white mb-2 text-white">Documentary|Music</p>
+                                    <div class="fullTitle-wrapper w-[400px]">
+                                        <p class="movie-fullTitle-desc text-white">
+                                            A recovering alcoholic and recently converted Mormon, Arthur \"Killer\" Kane, of the rock band The New York Dolls, is given a chance at reuniting with his band after 30 years.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="imdb-link text-sky-600 underline flex gap-1 mt-[40px]" target="_blank" href="#">Show on IMDb</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <template class="js-movies-template">
+        <li class="list-item rounded w-[285px] bg-white">
+            <div class="p-2 bg-white rounded">
+                <img class="movie-poster rounded  w-[291px] h-[165px] object-cover" src=""  alt="this is poster of a movie">
+            </div>
+            <div class="list-item-content p-2 pb-3 bg-white rounded-b-md flex flex-col justify-center">
+                <div class="h-[120px] flex flex-col justify-start">
+                    <h3 class="movie-title text-stone-800 text-[24px] mb-4 font-medium"></h3>
+                </div>
+                <div class="flex items-center gap-5 mb-7">
+                    <span class="movie-rating inline-flex items-center gap-1"></span>
+                    <span class="movie-premire inline-flex items-center gap-1"></span>
+                    <time class="movie-duration inline-flex items-center gap-1" datetime="2024-02-12"></time>
+                </div>
+                <p class="movie-genre text-[17px] text-slate-800 mb-2 h-[60px] flex items-center"></p>
+                <button class="js-moreInfo-button text-white bg-green-700 p-2 rounded">More info</button>
+            </div>
+        </li>
+    </template>
+    
+    
+    
+    <script src="./movies.js"></script>
+    <script src="./main.js"></script>
+    
+</body>
+</html>
